@@ -1,6 +1,4 @@
 # Liteswap
-Simple Dex
-# Liteswap
 ![Liteswap](/assets/Liteswap.png)
 
 A simple decentralized exchange protocol that pairs automated market making with limit orders for enhanced trader experience and liquidity provider risk management.
@@ -180,7 +178,11 @@ flowchart TD
 This guide explains how to deploy the Liteswap contract to both local development network and Sepolia testnet using Foundry.
 
 ## Prerequisites
-
+- Git
+- Terminal access
+- For Sepolia: 
+  - An Alchemy or Infura API key
+  - Some Sepolia ETH (from a faucet)
 - [Foundry](https://book.getfoundry.sh/getting-started/installation) installed
 
 
@@ -199,15 +201,11 @@ foundryup
 forge --version
 ```
 
-- Git
-- Terminal access
-- For Sepolia: 
-  - An Alchemy or Infura API key
-  - Some Sepolia ETH (from a faucet)
+
 
 ## Setup
 
-1. Clone the repository and install dependencies:
+Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/beh10000/LiteswapFoundry.git
 cd LiteswapFoundry
@@ -277,7 +275,7 @@ forge script script/DeployLiteswap.s.sol:DeployLiteswap \
     --verify \
     -vvvv
 ```
-
+If no need to verify contract, remove --verify flag.
 ### 4. Verify Contract (Optional)
 
 If the automatic verification didn't work, verify manually:
