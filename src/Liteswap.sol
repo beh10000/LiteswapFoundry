@@ -35,7 +35,7 @@ contract Liteswap is ReentrancyGuard {
     mapping(address tokenA => mapping(address tokenB => uint256)) public tokenPairId;
     mapping(uint256 pairId=> mapping(address liquidityProvider => LiquidityPosition)) public liquidityProviderPositions;
     mapping(uint256 pairId => mapping(uint256 orderId => LimitOrder)) public limitOrders;
-    mapping(uint256 pairId => uint256) private _orderIdCounter;
+    mapping(uint256 pairId => uint256) public _orderIdCounter;
     uint256 public _pairIdCount; // Counter for generating unique pair IDs
     uint256 private constant MINIMUM_SHARES = 1000; // prevent division by zero on first liquidity deposit
     
