@@ -3,6 +3,7 @@ pragma solidity ^0.8.28;
 
 import "forge-std/Script.sol";
 import "../src/Liteswap.sol";
+import "../test/TestERC20.sol";
 
 contract DeployLiteswap is Script {
     function run() external {
@@ -14,11 +15,13 @@ contract DeployLiteswap is Script {
 
         // Deploy Liteswap
         Liteswap liteswap = new Liteswap();
+        TestERC20Factory testERC20 = new TestERC20Factory();
 
         // Stop broadcasting transactions
         vm.stopBroadcast();
 
         // Log the address
         console.log("Liteswap deployed to:", address(liteswap));
+        console.log("Factory deployed to:", address(testERC20));
     }
 } 
