@@ -1000,6 +1000,7 @@ contract LiteswapSwappingTests is Test, SetUp {
         vm.expectRevert(abi.encodeWithSignature("InvalidAmount()"));
         liteswap.swap(pairId, address(tokenA), swapAmount, expectedOutput + 1);
     }
+    
 }
 
 contract LiteswapFeeAccumulationTests is Test, SetUp {
